@@ -67,7 +67,8 @@ passport.use(new AtlassianStrategy({
 		clientID: ATLASSIAN_CLIENT_ID,
 		clientSecret: ATLASSIAN_CLIENT_SECRET,
 		callbackURL: ATLASSIAN_CALLBACK_URL,
-		scope: 'iffline_access read:jira-work read:jira-user'
+		// authorizationURL: 'https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=LBwiMiJICZaIxCGRyD9jp42Q7Ao0zNpA&scope=read%3Ajira-user%20read%3Ajira-work&redirect_uri=https%3A%2F%2Fmfyz-express-psprt-atlassian.herokuapp.com%2Fatlassian%2Fcallback&state=&response_type=code&prompt=consent',
+		scope: 'offline_access read:jira-work read:jira-user'
 	},
 	function(accessToken, refreshToken, profile, done) {
 		if (accessToken && Object.keys(profile).length > 0) {
