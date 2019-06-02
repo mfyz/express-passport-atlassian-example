@@ -67,7 +67,7 @@ passport.use(new AtlassianStrategy({
 		clientID: ATLASSIAN_CLIENT_ID,
 		clientSecret: ATLASSIAN_CLIENT_SECRET,
 		callbackURL: ATLASSIAN_CALLBACK_URL,
-		scope: 'iffline_access read:jira-user'
+		scope: 'iffline_access read:jira-work read:jira-user'
 	},
 	function(accessToken, refreshToken, profile, done) {
 		if (accessToken && Object.keys(profile).length > 0) {
