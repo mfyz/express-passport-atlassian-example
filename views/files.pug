@@ -1,0 +1,9 @@
+extends layout
+block content
+	h1 My files
+	ul
+		each file in files
+			li
+				if file['.tag'] == 'folder'
+					span 📁 
+				span= file.name
