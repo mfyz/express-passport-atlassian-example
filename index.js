@@ -66,10 +66,10 @@ passport.use(new LocalStrategy((username, password, done) => {
 passport.use(new AtlassianStrategy({
 		clientID: ATLASSIAN_CLIENT_ID,
 		clientSecret: ATLASSIAN_CLIENT_SECRET,
-		callbackURL: ATLASSIAN_CALLBACK_URL,
+		callbackURL: ATLASSIAN_CALLBACK_URL,	
 		scope: 'offline_access read:jira-work read:jira-user'
 	},
-	function(accessToken, refreshToken, profile, done) {
+	(accessToken, refreshToken, profile, done) => {
 		if (accessToken && Object.keys(profile).length > 0) {
 			// console.log(accessToken, refreshToken, profile)
 			dbUtil.getUserByAtlassianId(profile.id)
