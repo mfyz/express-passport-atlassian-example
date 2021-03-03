@@ -26,7 +26,7 @@
     "passport-atlassian-oauth2": "^1.0.1",
     "passport-local": "^1.0.0",
     "pg": "^7.10.0",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "squel": "^5.12.2"
   }
 }
